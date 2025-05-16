@@ -1,71 +1,82 @@
-# AI-Powered Resume Analyzer  
+# AI-Powered Resume Analyzer (Next-Gen ATS)
 
-**AI-Powered Resume Analyzer**, a cutting-edge application designed to mimic the expertise of an HR professional! This tool leverages the power of **Google Generative AI** to analyze resumes, evaluate job compatibility, and offer actionable insights for career enhancement.  
+An intelligent Applicant Tracking System designed to streamline the recruitment process by using AI to analyze resumes, match candidates to job descriptions, identify skill gaps, and recommend career improvement resources.
 
----
+## 🚀 Features
 
-## 📋 **Project Overview**  
+- 🧾 Resume Upload & Parsing (PDF, OCR fallback)
+- 📊 Resume Analysis (skills, gaps, strengths)
+- 📌 Job Description Matching with Compatibility Score
+- 🎯 AI-Based Career Suggestions
+- 📚 Course Recommendations for Upskilling
+- 🧠 Powered by Google Generative AI (Gemini)
 
-The **AI-Powered Resume Analyzer** serves as a virtual HR assistant, providing:  
-- Detailed resume evaluation, including strengths and weaknesses.  
-- Suggestions for skill improvement and recommended courses.  
-- Job-specific resume analysis to measure compatibility and alignment with job descriptions.  
+## 🧩 Tech Stack
 
-Whether you’re a job seeker or a recruiter, this tool simplifies resume assessment and improvement.  
+| Layer         | Technology             |
+|--------------|------------------------|
+| Frontend     | [Streamlit](https://streamlit.io) |
+| Backend      | Python 3.10+           |
+| AI Engine    | Google Generative AI (Gemini) |
+| PDF Parsing  | pdfplumber             |
+| OCR Fallback | pytesseract            |
+| Config Mgmt  | dotenv (.env)          |
 
----
+## 🖥️ System Workflow
 
-## 🔑 **Features**  
+1. User uploads a resume PDF.
+2. Text is extracted via `pdfplumber` (fallback: `pytesseract`).
+3. Resume is analyzed using Google Gemini AI:
+    - Summarization
+    - Skill extraction
+    - Compatibility check
+4. Output is displayed in an interactive Streamlit UI.
 
-### 1️⃣ **General Resume Analysis**  
-- Summarizes the resume in one line.  
-- Highlights existing skill sets.  
-- Identifies skill gaps and suggests improvements.  
-- Recommends popular courses to enhance the resume.  
-- Provides a thorough evaluation of strengths and weaknesses.  
+## 🧑‍💼 Target Users
 
-### 2️⃣ **Resume Matching with Job Description**  
-- Analyzes resume compatibility with a specific job description.  
-- Provides a match score in percentage.  
-- Highlights missing skills and areas needing improvement.  
-- Suggests whether the resume is ready for the job or requires further enhancements.  
+- 🎓 Job Seekers looking to improve their resumes
+- 🧑‍💼 Recruiters seeking faster candidate evaluation
+- 🧑‍🏫 Career counselors and job platforms
 
----
+## 📋 Functional Modules
 
-## 🛠️ **Tech Stack**  
+### ✅ Resume Upload & Parsing
+- Upload PDFs via Streamlit
+- Extract text using `pdfplumber` or OCR fallback
 
-| **Component**       | **Technology**                  |  
-|----------------------|----------------------------------|  
-| **Frontend**         | [Streamlit](https://streamlit.io/) |  
-| **Backend**          | Python                          |  
-| **AI Model**         | [Google Generative AI (Gemini)](https://developers.generativeai.google/) |  
-| **PDF Parsing**      | `pdfplumber`                    |  
-| **OCR Fallback**     | `pytesseract`                   |  
-| **Environment Config** | `.env` for API key security    |  
+### ✅ Resume Analysis
+- AI-generated summary of resume content
+- Skill extraction and gap analysis
+- Personalized suggestions and strengths overview
 
----
+### ✅ Job Description Matching
+- Upload or input job description
+- AI evaluates compatibility and calculates a match score
 
-## 📊 **How It Works**
+### ✅ Course Recommendations
+- Identifies missing skills
+- Recommends top-rated online courses
 
-1. **Resume Parsing**  
-   - Extracts text from PDF files using `pdfplumber` or OCR as a fallback.
+## 🔒 Non-Functional Requirements
 
-2. **AI Analysis**  
-   - Utilizes Google Generative AI to summarize and analyze resume content.  
-   - Matches skills with job descriptions for compatibility scoring.
+- ⚡ **Performance**: Analysis within 10 seconds
+- 👨‍💻 **Usability**: No technical skill needed
+- 📈 **Scalability**: Supports concurrent requests
+- 🔁 **Reliability**: Automatic OCR fallback
+- 🔐 **Security**: API keys stored securely using `.env`
+- 🧰 **Maintainability**: Modular and extensible code
+- 💼 **Portability**: Runs on any Python-compatible environment
 
-3. **Insightful Feedback**  
-   - Provides actionable suggestions for skill enhancement, including course recommendations.  
-   - Highlights strengths and weaknesses to refine resumes for better opportunities.
+## 🔮 Future Enhancements
 
----
+- 🌐 Multi-language support
+- 🤝 Integration with LinkedIn / Indeed APIs
+- 📝 Exportable analysis reports
+- 👤 User authentication and dashboards
 
-![image](https://github.com/user-attachments/assets/418e54ef-82d0-474b-a6bc-9a30d72f27f5)
+## 📦 Installation
 
-## 🙌 **Contributing**
-
-Welcome contributions to make this tool better!
-
-1. **Fork** the repository.  
-2. **Create a new branch** for your feature or bug fix.  
-3. **Submit a pull request** with detailed information about your changes.
+```bash
+git clone https://github.com/your-username/next-gen-ats.git
+cd next-gen-ats
+pip install -r requirements.txt
